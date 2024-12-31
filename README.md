@@ -39,14 +39,20 @@ The dataset provided consisted of three files:
 ## **Steps to Solve the Problem**
 
 ### **1. Data Preprocessing**
-- **Date Parsing**: Converted `order_shipped_date` and `order_delivered_date` to datetime objects.
-- **Feature Engineering**:
+1. **Date Parsing**: Converted `order_shipped_date` and `order_delivered_date` to datetime objects.
+2. **Feature Engineering**:
   - Computed `actual_sla` (number of days between shipment and delivery) for training.
   - Extracted additional features such as the weekday of shipping.
-- **Encoding Categorical Variables**:
+3. **Encoding Categorical Variables**:
   - Used label encoding for features like `courier_partner_id`, `account_type_id`, and `account_mode`.
-- **Geographic Features**:
+4. **Geographic Features**:
   - Merged `pincodes.csv` to calculate geographic distances between `pickup_pin_code` and `drop_pin_code`.
+5. **Outlier Detection and Removal**:
+   - Removed outliers in `actual_sla` using the IQR method.
+6. **Handling Missing Values**:
+   - Imputed missing numerical values with their median and categorical values with their mode.
+7. **Duplicate Removal**:
+   - Dropped duplicate rows from the dataset.
 
 ![Screenshot 2024-12-22 at 8 59 39 PM](https://github.com/user-attachments/assets/ffdad7ee-3bca-42d0-b1b9-1760f24316bd)
 
@@ -56,21 +62,23 @@ The dataset provided consisted of three files:
 
 ### **2. Model Selection**
 I selected **RandomForestRegressor** for this task due to:
-- Its ability to handle both numerical and categorical data.
-- Resistance to overfitting with hyperparameter tuning.
-- Built-in feature importance evaluation.
+- Its ability to handle both numerical and categorical data efficiently.
+- Robustness to outliers, resistance to overfitting, and low requirement for feature scaling.
+- Built-in feature importance evaluation to identify key drivers for predictions.
 
 <p align="left">
   <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" 
 </p>
 
 ### **3. Model Training and Validation**
-- **Training Dataset**: Split the training data into an 80:20 ratio for training and validation.
-- **Evaluation Metrics**:
-  - Root Mean Squared Error (RMSE): 0.7601
-  - Mean Absolute Error (MAE): 0.3645
-  - R² Score: 0.8074
-- Hyperparameter tuning using GridSearchCV further improved model performance.
+1. **Training Dataset**:
+   - Split the cleaned training data into an `80:20 ratio` for training and validation.
+2. **Evaluation Metrics**:
+   - **Root Mean Squared Error (RMSE):** `0.4577`
+   - **Mean Absolute Error (MAE):** `0.2763`
+   - **R² Score:** `0.8975`
+3. **Alternative Models**:
+   - Trained and evaluated additional models, including XGBoost and LightGBM. However, RandomForestRegressor outperformed them in terms of RMSE.
 
 ![Screenshot 2024-12-22 at 8 59 30 PM](https://github.com/user-attachments/assets/6c289cbc-4d2d-4448-a047-d573d833b28f)
 
