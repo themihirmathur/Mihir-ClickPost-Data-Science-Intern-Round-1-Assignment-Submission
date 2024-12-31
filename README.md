@@ -5,7 +5,7 @@
 </p>
 
 ## Problem Statement
-Logistics is a critical sector with millions of daily shipments. Predicting the exact Estimated Delivery Date (EDD) for each order is essential for enhancing customer experience and optimizing operational efficiency. The objective of this project is to predict the `predicted_exact_sla`, which is the number of days between the shipment and delivery of an order, using historical shipment data.
+`Logistics` is a critical sector with millions of daily shipments. Predicting the exact Estimated Delivery Date (EDD) for each order is essential for enhancing customer experience and optimizing operational efficiency. The objective of this project is to predict the `predicted_exact_sla`, which is the number of days between the shipment and delivery of an order, using historical shipment data.
 
 ![Screenshot 2024-12-22 at 9 13 28 PM](https://github.com/user-attachments/assets/12efa205-8001-48a8-85d1-025a9f511fbd)
 
