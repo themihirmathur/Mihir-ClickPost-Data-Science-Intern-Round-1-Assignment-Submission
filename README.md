@@ -76,7 +76,7 @@ I selected **RandomForestRegressor** for this task due to:
 2. **Evaluation Metrics**:
    - **Root Mean Squared Error (RMSE):** `0.4577`
    - **Mean Absolute Error (MAE):** `0.2763`
-   - **R² Score:** `0.8975`
+   - **R² Score:** `0.7592`
 3. **Alternative Models**:
    - Trained and evaluated additional models, including XGBoost and LightGBM. However, RandomForestRegressor outperformed them in terms of RMSE.
 
