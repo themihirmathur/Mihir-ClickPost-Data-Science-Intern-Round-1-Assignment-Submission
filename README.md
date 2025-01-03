@@ -72,7 +72,7 @@ I selected **RandomForestRegressor** for this task due to:
 
 ### **3. Model Training and Validation**
 1. **Training Dataset**:
-   - Split the cleaned training data into an `80:20 ratio` for training and validation.
+   - Three models were trained, evaluated, and then used by a meta-model (with Linear Regression): RandomForestRegressor, XGBoost, and LightGBM.
 2. **Evaluation Metrics**:
    - **Root Mean Squared Error (RMSE):** `0.4577`
    - **Mean Absolute Error (MAE):** `0.2763`
