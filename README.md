@@ -136,6 +136,32 @@ To integrate the model into the ClickPost system:
 3. **Data Visualization**: Feature importance and SLA prediction distribution graphs.
 4. **Engineering Document**: Steps for integrating the EDD model into ClickPost's system.
 
+<p align="left">
+  <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" 
+</p>
+
+## Future Work
+
+1. **Data Preprocessing**:  
+   - Handle missing values more effectively to ensure data quality.
+
+2. **Feature Engineering**:  
+   - Add features such as geographic distance using latitude and longitude from `pincodes.csv`.  
+   - Incorporate indicators for weekends and weekdays to capture temporal effects.
+
+3. **Integration into ClickPost**:
+  
+   a. **Deployment**:  
+      - Convert the model to a REST API using Flask or FastAPI.  
+      - Handle real-time predictions via JSON requests.  
+
+   b. **Batch Processing**:  
+      - Enable bulk predictions for large datasets via CSV uploads.  
+
+   c. **Monitoring**:  
+      - Log predictions and compare them with actual SLAs.  
+      - Periodically refine the model based on performance metrics.  
+
 ---
 
 ## **Contact**
